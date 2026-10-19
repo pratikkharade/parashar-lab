@@ -6,6 +6,8 @@ index: 1
 role: PhD Student
 email: sumaiya.azad@example.edu
 homepage: https://example.edu/people/sumaiya-azad
+linkedin: null
+github: null
 interests: Data-centric machine learning
 description: Sumaiya is a graduate researcher working on data-centric machine learning and computational methods.
 ---

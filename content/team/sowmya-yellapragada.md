@@ -6,6 +6,8 @@ index: 1
 role: PhD Student
 email: sowmya.yellapragada@example.edu
 homepage: https://example.edu/people/sowmya-yellapragada
+linkedin: null
+github: null
 interests: Data-centric machine learning
 description: Sowmya is a doctoral researcher interested in machine learning, data systems, and collaborative computing.
 ---

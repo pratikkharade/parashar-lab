@@ -6,6 +6,8 @@ index: 2
 role: Indivadual Contributor
 email: rafael.ladislau@example.edu
 homepage: https://example.edu/people/rafael-ladislau
+linkedin: null
+github: null
 interests: Data-centric machine learning
 description: Rafael contributes to collaborative research on data-centric machine learning and its practical applications.
 ---

@@ -6,6 +6,8 @@ index: 3
 role: PhD Student
 email: sajan.neupane@example.edu
 homepage: https://example.edu/people/sajan-neupane
+linkedin: null
+github: null
 interests: Data-centric machine learning
 description: Sajan is a doctoral researcher exploring data-centric learning methods for complex computational problems.
 ---

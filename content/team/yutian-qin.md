@@ -6,6 +6,8 @@ index: 3
 role: IT Specialist
 email: yutian.qin@example.edu
 homepage: https://example.edu/people/yutian-qin
+linkedin: null
+github: null
 interests: Machine learning, data systems
 description: Yutian is an IT specialist supporting the lab's computing environment, data systems, and research operations.
 ---
