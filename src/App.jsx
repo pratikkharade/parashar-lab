@@ -6,6 +6,7 @@ import './publications.css'
 import './hero-photo.css'
 import './projects.css'
 import './mission-vision.css'
+import './responsive.css'
 
 const files = import.meta.glob('../content/**/*.md', { eager: true, query: '?raw', import: 'default' })
 const parse = (raw, path) => {

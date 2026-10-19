@@ -78,6 +78,13 @@ button.director:focus-visible {
   gap: 42px;
 }
 
+.modal-profile aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 .modal-profile h2 {
   margin: 0 0 18px;
   color: var(--navy);
@@ -93,11 +100,18 @@ button.director:focus-visible {
 .modal-profile > div:last-child {
   display: flex;
   flex-direction: column;
+  text-align: center;
+}
+
+.modal-profile > div:last-child > p {
+  text-align: justify;
 }
 
 .profile-links {
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 8px;
   margin-top: auto;
   padding-top: 28px;
 }
@@ -129,7 +143,55 @@ button.director:focus-visible {
 
   .modal-profile {
     grid-template-columns: 1fr;
-    gap: 22px;
+    grid-template-areas:
+      "photo"
+      "name"
+      "role"
+      "description"
+      "links";
+    column-gap: 22px;
+    row-gap: 12px;
+    justify-items: center;
+  }
+
+  .modal-profile aside,
+  .modal-profile > div:last-child {
+    display: contents;
+  }
+
+  .modal-profile .avatar,
+  .modal-profile .profile-image {
+    grid-area: photo;
+  }
+
+  .modal-profile h2 {
+    grid-area: name;
+    margin: 0;
+    text-align: center;
+  }
+
+  .modal-profile .role {
+    grid-area: role;
+    margin: 0;
+    text-align: center;
+  }
+
+  .modal-profile aside p:not(.role) {
+    display: none;
+  }
+
+  .modal-profile > div:last-child > p {
+    grid-area: description;
+    width: 100%;
+    margin: 8px 0 0;
+    text-align: justify;
+  }
+
+  .profile-links {
+    grid-area: links;
+    width: 100%;
+    margin-top: 0;
+    padding-top: 14px;
   }
 
   .modal-profile .avatar,
