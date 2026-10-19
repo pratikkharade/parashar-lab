@@ -84,6 +84,20 @@ function Research({ settings, projects }) { return <div className="page"><p clas
 function Publications({ settings, publications }) { const years = [...new Set(publications.map((p) => p.year))].sort((a, b) => b - a); return <div className="page"><p className="eyebrow">{settings.publicationsEyebrow}</p><h1>{settings.publicationsTitle}</h1><p className="lead narrow">{settings.publicationsLead}</p><div className="publication-list">{years.map((year) => <section className="pub-year" key={year}><h2>{year}</h2>{publications.filter((p) => p.year === year).map((p) => <article key={p.slug}><h3>{p.title}</h3><p>{p.authors}</p><p><em>{p.venue}</em></p><a href={`https://www.doi.org/${p.DOI}`} target="_blank" rel="noreferrer">{settings.doiLabel} {p.DOI}</a></article>)}</section>)}</div></div> }
 function News({ settings, news, events }) { return <div className="page"><p className="eyebrow">{settings.newsEyebrow}</p><h1>{settings.newsTitle}</h1><div className="news-layout"><section>{news.map((n, i) => <article className={i ? 'news-row' : 'featured-news'} key={n.slug}><div className="news-image">{n.category}</div><div><p className="meta">{n.date} {settings.metadataSeparator} {n.category}</p><h2>{n.title}</h2><p>{n.excerpt}</p></div></article>)}</section><aside className="sidebar events"><h2>{settings.eventsTitle}</h2>{events.map((event) => <article key={event.slug}><b>{event.date}</b><p><strong>{event.title}</strong><br/>{event.summary}</p></article>)}</aside></div></div> }
 function Contact({ settings, join }) { return <div className="page"><p className="eyebrow">{settings.contactEyebrow}</p><h1>{settings.contactTitle}</h1><p className="lead narrow">{settings.contactLead}</p><div className="contact-grid"><section><h2>{settings.contactInfoTitle}</h2><p><strong>{settings.labAddressLabel}</strong><br/>{settings.department}<br/>{settings.university}<br/>{settings.streetAddress}<br/>{settings.cityState}</p><p><strong>{settings.professorLabel}</strong><br/><a href={`mailto:${settings.contactEmail}`}>{settings.contactEmail}</a></p></section><section><h2>{settings.contactFormTitle}</h2><p>{settings.contactFormLead}</p><form onSubmit={(e) => e.preventDefault()}><label>{settings.nameLabel}<input /></label><label>{settings.emailLabel}<input type="email" /></label><label>{settings.messageLabel}<textarea rows="4" /></label><button className="primary">{settings.sendMessageLabel}</button></form></section></div><section className="join"><Title>{settings.joinTitle}</Title><div className="three">{join.map((item) => <article key={item.slug}><h3>{item.title}</h3><p>{item.summary}</p></article>)}</div></section></div> }
+function MobileTopButton({ settings }) {
+  const [visible, setVisible] = useState(false)
+  useEffect(() => {
+    const updateVisibility = () => setVisible(window.innerWidth <= 800 && window.scrollY > 280)
+    updateVisibility()
+    addEventListener('scroll', updateVisibility, { passive: true })
+    addEventListener('resize', updateVisibility)
+    return () => {
+      removeEventListener('scroll', updateVisibility)
+      removeEventListener('resize', updateVisibility)
+    }
+  }, [])
+  return <button className={`mobile-top-button ${visible ? 'is-visible' : ''}`} type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label={settings.backToTopLabel}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18V6M7 11l5-5 5 5"/></svg></button>
+}
 function Header({ page, navigation, settings, go }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const navigate = (next) => { setMobileMenuOpen(false); go(next) }
@@ -101,8 +115,8 @@ export default function App() {
     addEventListener('popstate', update)
     return () => removeEventListener('popstate', update)
   }, [])
-  const go = (next) => { history.pushState({}, '', pathForPage(next)); setPage(next); document.querySelector('main')?.scrollTo({ top: 0, behavior: 'smooth' }) }
+  const go = (next) => { history.pushState({}, '', pathForPage(next)); setPage(next); if (window.innerWidth <= 800) window.scrollTo({ top: 0, behavior: 'smooth' }); else document.querySelector('main')?.scrollTo({ top: 0, behavior: 'smooth' }) }
   const props = { settings, people, areas, projects, news, publications, events, join, go }
   const Page = { home: Home, team: People, projects: Research, publications: Publications, news: News, contact: Contact }[page] || Home
-  return <><Header page={page} navigation={navigation} settings={settings} go={go}/><main><Page {...props}/></main><footer><strong>{settings.labName}</strong><span>{settings.tagline}</span><span>{settings.footerCopyright.replace('{year}', new Date().getFullYear())}</span></footer></>
+  return <><Header page={page} navigation={navigation} settings={settings} go={go}/><main><Page {...props}/></main><MobileTopButton settings={settings}/><footer><strong>{settings.labName}</strong><span>{settings.tagline}</span><span>{settings.footerCopyright.replace('{year}', new Date().getFullYear())}</span></footer></>
 }

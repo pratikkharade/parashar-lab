@@ -11,6 +11,7 @@ desktopNavigationLabel: Primary navigation
 mobileNavigationLabel: Mobile navigation
 mobileMenuOpenLabel: Open navigation
 mobileMenuCloseLabel: Close navigation
+backToTopLabel: Back to top
 researchAreasEyebrow: What we study
 researchAreasTitle: Research areas
 latestNewsEyebrow: From the lab
