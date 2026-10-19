@@ -7,6 +7,10 @@ researchButton: Explore our research →
 heroGraphic: PEOPLE | DATA | SYSTEMS
 heroImage: /images/home-research-team.png
 heroImageAlt: A research team collaborating around a computer in a university lab.
+desktopNavigationLabel: Primary navigation
+mobileNavigationLabel: Mobile navigation
+mobileMenuOpenLabel: Open navigation
+mobileMenuCloseLabel: Close navigation
 researchAreasEyebrow: What we study
 researchAreasTitle: Research areas
 latestNewsEyebrow: From the lab
