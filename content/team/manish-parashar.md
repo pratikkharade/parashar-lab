@@ -6,7 +6,7 @@ index: 1
 featured: true
 role: Professor & Lab Director
 email: aparashar@example.edu
-homepage: https://example.edu/people/manish-parashar
+homepage: https://www.manishparashar.org
 interests: Collaborative systems, AI, and societal impact
 description: Prof. Parashar leads research on trustworthy computing systems and collaborative technologies that address complex real-world problems.
 ---
