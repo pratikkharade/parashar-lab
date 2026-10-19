@@ -1,7 +1,7 @@
 ---
 title: Contextual Insights
 content_type: featured_project
-index: 3
+index: 1
 area: INSIGHTS INTO DATASETS
 summary: Contextual Insights generates analysis and insights into datasets, and establishes relationships between datasets.
 leads: Prof. Anika Parashar; Rohan Mehta
