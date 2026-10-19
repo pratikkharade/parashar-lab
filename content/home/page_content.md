@@ -2,7 +2,7 @@
 content_type: settings
 # homeEyebrow: Professor-led research group
 homeTitle: Header for the home page.
-homeLead: Tagline for the home page.
+homeLead: Lorem ipsum dolor sit amet consectetur adipiscing elit ad elit est dolor et mollit et adipiscing facilis voluptate odio commodo eum occaecat fugiat et id id veniam nobis velit deleniti laborum quo commodo deserunt id quis rerum placeat sunt cillum ut maxime aut fuga veniam pariatur sunt commodo laborum aut
 researchButton: Explore our research →
 heroGraphic: PEOPLE | DATA | SYSTEMS
 heroImage: /images/home-research-team.png
