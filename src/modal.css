@@ -1,0 +1,139 @@
+.person {
+  background: #fffefb;
+  text-align: left;
+  color: inherit;
+}
+
+.person:hover,
+.person:focus-visible {
+  border-color: var(--blue);
+  box-shadow: 0 6px 20px rgba(16, 46, 89, 0.12);
+}
+
+button.director {
+  width: 100%;
+  border: 0;
+  text-align: left;
+  color: inherit;
+}
+
+button.director:hover,
+button.director:focus-visible {
+  box-shadow: 0 6px 20px rgba(16, 46, 89, 0.12);
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.profile-image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(16, 46, 89, 0.54);
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.modal-backdrop.is-open {
+  opacity: 1;
+}
+
+.profile-modal {
+  position: relative;
+  width: min(860px, 100%);
+  background: #fffefb;
+  padding: 48px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+  opacity: 0;
+  transform: translateY(12px) scale(0.985);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.modal-backdrop.is-open .profile-modal {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  border: 0;
+  background: transparent;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.modal-profile {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 42px;
+}
+
+.modal-profile h2 {
+  margin: 0 0 18px;
+  color: var(--navy);
+  font-family: var(--serif);
+  font-size: 2rem;
+}
+
+.modal-profile p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.modal-profile > div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-links {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 28px;
+}
+
+.profile-links > span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.profile-link-separator {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 12px;
+  line-height: 1;
+}
+
+.modal-profile aside p {
+  margin: 12px 0;
+}
+
+.modal-profile .role {
+  margin-top: 18px;
+}
+
+@media (max-width: 800px) {
+  .director .profile-image {
+    max-width: 240px;
+  }
+
+  .modal-profile {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .modal-profile .avatar,
+  .modal-profile .profile-image {
+    max-width: 220px;
+  }
+}

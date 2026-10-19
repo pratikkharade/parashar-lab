@@ -1,0 +1,11 @@
+.project {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.project.project-detail {
+  grid-template-columns: minmax(0, 1fr) 280px;
+}
+
+.project-page-list {
+  margin-top: 54px;
+}

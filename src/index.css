@@ -1,0 +1,2 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap');
+:root { --navy:#102e59; --blue:#1766b1; --ink:#263743; --muted:#5e6d78; --line:#d7dde0; --pale:#edf5f8; --serif:'Libre Baskerville', Georgia, serif; --sans:'Source Sans 3', Arial, sans-serif; font-family:var(--sans); color:var(--ink); background:#fffefb; font-synthesis:none; } body { margin:0; } #root { height:100vh; display:flex; flex-direction:column; overflow:hidden; }

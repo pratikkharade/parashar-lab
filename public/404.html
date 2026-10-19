@@ -1,0 +1,11 @@
+<!doctype html>
+<meta charset="utf-8">
+<script>
+  const routes = new Set(['home', 'projects', 'publications', 'team', 'contact', 'news'])
+  const pathParts = location.pathname.split('/').filter(Boolean)
+  const route = pathParts.at(-1)
+  if (routes.has(route)) {
+    const basePath = pathParts.slice(0, -1).join('/')
+    location.replace(`/${basePath}${basePath ? '/' : ''}?page=${encodeURIComponent(route)}`)
+  }
+</script>

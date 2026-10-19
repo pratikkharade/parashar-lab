@@ -1,0 +1,47 @@
+.mission-vision {
+  padding: 72px max(6.5vw, 36px);
+  border-top: 1px solid var(--line);
+}
+
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  max-width: 980px;
+}
+
+.mission-vision-grid article {
+  padding: 4px 42px 4px 0;
+}
+
+.mission-vision-grid article + article {
+  padding-left: 42px;
+  border-left: 1px solid var(--line);
+}
+
+.mission-vision-grid article > p:last-child {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 800px) {
+  .mission-vision {
+    padding: 52px 24px;
+  }
+
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-vision-grid article,
+  .mission-vision-grid article + article {
+    padding: 22px 0;
+    border-left: 0;
+  }
+
+  .mission-vision-grid article + article {
+    border-top: 1px solid var(--line);
+  }
+}
